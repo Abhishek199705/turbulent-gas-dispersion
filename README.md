@@ -118,7 +118,7 @@ The SST model initially experienced convergence difficulties. Adjusting the solv
 
 Residual and continuity-error histories were analysed using Python.
 
-*Insert convergence and continuity-error plots here.*
+
 
 ### 4.2 Flow Separation and Reattachment
 
@@ -141,7 +141,7 @@ The molecular-only cases exhibit pronounced variations in tracer concentration a
 
 Including turbulent diffusivity produces smoother concentration distributions and changes the predicted transport into the separated-flow region.
 
-*Insert the four-model concentration comparison figure here.*
+
 
 The results demonstrate that modelling turbulent scalar transport can significantly influence predicted concentrations.
 
@@ -159,7 +159,6 @@ Transient concentration histories were extracted from all four simulations.
 
 An illustrative normalized concentration threshold of 0.3 was used to investigate detector response.
 
-*Insert concentration-versus-time plots here.*
 
 **Key observations:**
 
@@ -182,7 +181,7 @@ Current limitations include:
 - Steady RANS airflow rather than resolved transient turbulence.
 - Near-wall mesh resolution requiring further assessment.
 - No completed mesh-independence or experimental-validation study.
-- Idealized virtual detectors without measurement delay or sensor dynamics.
+
 
 Tracer concentration is normalized and must not be interpreted as a calibrated gas concentration or industrial alarm measurement.
 
@@ -209,21 +208,8 @@ Potential extensions include:
 | Pandas | Numerical data handling |
 | Matplotlib | Engineering plots |
 
-## 8. Reproducing the Simulations
 
-The main workflow consists of:
-
-1. Generate and verify the computational mesh.
-2. Run `simpleFoam` using k-ε and k-ω SST turbulence models.
-3. Transfer the corresponding airflow fields, including `U` and pressure-corrected `phi`, into scalar-transport cases.
-4. For the turbulent-diffusion cases, also transfer the corresponding `nut` field.
-5. Run `scalarTransportFoam` or the compiled `scalarTransportTurbFoam` solver.
-6. Extract concentration profiles and virtual detector histories.
-7. Analyse the data using the Python scripts provided.
-
-The project uses OpenFOAM Foundation 6. Successful reproduction requires the matching case configuration, mesh and solver environment.
-
-## 9. Conclusions
+## 8. Conclusions
 
 This project demonstrates a CFD workflow involving turbulent airflow modelling, transient scalar transport, custom solver modification and virtual detector analysis.
 
