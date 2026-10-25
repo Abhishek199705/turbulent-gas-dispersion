@@ -1,0 +1,88 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     scalarTransportFoam;
+
+startFrom       startTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         0.5;
+
+deltaT          0.0001;
+
+writeControl    timeStep;
+
+writeInterval   500;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  6;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable true;
+
+functions
+{
+    tracerMinMax
+    {
+        type        fieldMinMax;
+        libs        ("libfieldFunctionObjects.so");
+
+        fields      (T);
+        mode        magnitude;
+        location    yes;
+        log         yes;
+        write       yes;
+    }
+
+    concentrationLine
+    {
+        type sets;
+        libs ("libsampling.so");
+
+        fields (T);
+
+        interpolationScheme cellPoint;
+        setFormat raw;
+
+        sets
+        (
+            plumeLine
+            {
+                type lineUniform;
+                axis xyz;
+
+                start (0.001 -0.015 0);
+                end   (0.205 -0.015 0);
+
+                nPoints 300;
+            }
+        );
+    }
+}
+
+// ************************************************************************* //

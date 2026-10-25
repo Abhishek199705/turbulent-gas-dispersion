@@ -1,0 +1,29 @@
+# OpenFOAM generated results
+postProcessing/
+processor*/
+dynamicCode/
+VTK/
+*.foam
+log.*
+*.log
+
+# OpenFOAM generated numeric time directories
+**/[1-9]*/
+**/0.[0-9]*/
+
+# Compiled files
+*.o
+*.dep
+platforms/
+lnInclude/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# System
+.DS_Store
+
+# OpenFOAM wmake generated directories
+**/Make/linux64*/
