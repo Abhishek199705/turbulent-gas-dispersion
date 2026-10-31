@@ -44,12 +44,13 @@ After solving the airflow, the converged velocity and face-flux fields are trans
 
 The passive scalar transport equation is:
 
+
 $$
 \frac{\partial T}{\partial t}
 + \nabla \cdot (\mathbf{U}T)
-=
-\nabla \cdot (D_{\mathrm{eff}} \nabla T)
+= \nabla \cdot (D_{\mathrm{eff}} \nabla T)
 $$
+
 
 
 where:
