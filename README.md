@@ -44,24 +44,30 @@ After solving the airflow, the converged velocity and face-flux fields are trans
 
 The passive scalar transport equation is:
 
-\[
+
+$$
 \frac{\partial T}{\partial t}
-+\nabla\cdot(\mathbf{U}T)
++ \nabla \cdot (\mathbf{U}T)
 =
-\nabla\cdot(D_{\mathrm{eff}}\nabla T)
-\]
+\nabla \cdot (D_{\mathrm{eff}} \nabla T)
+$$
+
 
 where:
 
-- \(T\): normalized tracer concentration
-- \(\mathbf U\): prescribed velocity field
-- \(D_{\mathrm{eff}}\): effective scalar diffusivity
+
+- $T$: Normalized tracer concentration (dimensionless)
+- $\mathbf{U}$: Prescribed velocity field ($\mathrm{m/s}$)
+- $D_{\mathrm{eff}}$: Effective scalar diffusivity ($\mathrm{m^2/s}$)
+
 
 For molecular-only dispersion:
 
-\[
-D_{\mathrm{eff}}=D_m
-\]
+
+$$
+D_{\mathrm{eff}} = D_m
+$$
+
 
 For turbulence-enhanced dispersion:
 
