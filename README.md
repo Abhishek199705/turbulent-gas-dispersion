@@ -65,9 +65,9 @@ D_{\mathrm{eff}}=D_m
 
 For turbulence-enhanced dispersion:
 
-\[
-D_{\mathrm{eff}}=D_m+\frac{\nu_t}{Sc_t}
-\]
+$$
+D_{\mathrm{eff}} = D_m + \frac{\nu_t}{Sc_t}
+$$
 
 The molecular diffusivity is set to \(1.6\times10^{-5}\,\mathrm{m^2/s}\), and the turbulent Schmidt number is set to 0.7.
 
