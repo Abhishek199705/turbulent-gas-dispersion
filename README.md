@@ -45,6 +45,7 @@ After solving the airflow, the converged velocity and face-flux fields are trans
 The passive scalar transport equation is:
 
 
+
 $$
 \frac{\partial T}{\partial t}
 + \nabla \cdot (\mathbf{U}T)
@@ -52,9 +53,7 @@ $$
 $$
 
 
-
 where:
-
 
 - $T$: Normalized tracer concentration (dimensionless)
 - $\mathbf{U}$: Prescribed velocity field ($\mathrm{m/s}$)
